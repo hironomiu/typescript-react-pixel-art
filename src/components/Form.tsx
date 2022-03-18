@@ -1,3 +1,4 @@
+// TODO 型
 const Form = ({ color, setColor, handleRadioChange, squareNum }: any) => {
   return (
     <div>

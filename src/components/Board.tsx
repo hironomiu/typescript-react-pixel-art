@@ -9,11 +9,7 @@ const Board = ({
   setIsOnMouseDown,
 }: any) => {
   return (
-    <div
-      className="flex flex-col border-t-[1px] border-l-[1px] border-solid border-black"
-      onMouseDown={() => console.log('down')}
-      onMouseUp={() => console.log('up')}
-    >
+    <div className="flex flex-col border-t-[1px] border-l-[1px] border-solid border-black">
       {[...Array(squareNum).keys()].map((_, index) => {
         return (
           <Line
