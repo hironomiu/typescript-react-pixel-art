@@ -1,12 +1,21 @@
-// TODO 型
-const Square = ({
+import { FC } from 'react'
+
+type Props = {
+  vertical: number
+  horizontal: number
+  colors: string[][]
+  handleColorChange: (horizontal: number) => void
+  isOnMouseDown: boolean
+  setIsOnMouseDown: React.Dispatch<React.SetStateAction<boolean>>
+}
+const Square: FC<Props> = ({
   vertical,
   horizontal,
   colors,
   handleColorChange,
   isOnMouseDown,
   setIsOnMouseDown,
-}: any) => {
+}) => {
   return (
     <div
       data-testid={`square-${vertical}-${horizontal}`}

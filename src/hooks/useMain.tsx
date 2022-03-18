@@ -15,8 +15,7 @@ export const useMain = () => {
     colors2[vertical][horizontal] = color
     setColors(colors2)
   }
-  // TODO 型
-  const handleRadioChange = (e: any) => {
+  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSquareNum(Number(e.target.value))
     setColors(
       [...Array(Number(e.target.value)).keys()].map(() =>
