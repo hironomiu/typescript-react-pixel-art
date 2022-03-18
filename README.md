@@ -1,3 +1,21 @@
+#　 typescript-react-pixel-art
+
+## Run
+
+```
+npm start
+```
+
+## Install Memo
+
+```
+npx create-react-app --template typescript .
+```
+
+## tailwind
+
+[](https://tailwindcss.com/docs/installation)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
