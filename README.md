@@ -6,15 +6,29 @@
 npm start
 ```
 
+## Testing
+
+```
+npm test
+```
+
 ## Install Memo
 
 ```
 npx create-react-app --template typescript .
 ```
 
-## tailwind
+### tailwind
 
 [](https://tailwindcss.com/docs/installation)
+
+### Testing
+
+カスタム hooks のテスト用
+
+```
+npm install --save-dev @testing-library/react-hooks
+```
 
 # Getting Started with Create React App
 

@@ -9,6 +9,7 @@ const Square = ({
 }: any) => {
   return (
     <div
+      data-testid={`square-${vertical}-${horizontal}`}
       className="h-4 w-4 border-b-[1px] border-r-[1px] border-solid border-black"
       style={{ backgroundColor: colors[vertical][horizontal] }}
       onMouseDown={() => {
