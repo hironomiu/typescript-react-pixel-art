@@ -3,7 +3,7 @@ import Board from './Board'
 import Form from './Form'
 
 const defaultColors = [...Array(8).keys()].map((num) =>
-  [...Array(8).keys()].map((num) => '#ffffff')
+  [...Array(8).keys()].map(() => '#ffffff')
 )
 
 const Main = () => {
