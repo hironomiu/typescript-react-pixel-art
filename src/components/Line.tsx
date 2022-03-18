@@ -1,6 +1,14 @@
 import Square from './Square'
 
-const Line = ({ vertical, colors, handleColorChange, squareNum }: any) => {
+// TODO 型
+const Line = ({
+  vertical,
+  colors,
+  handleColorChange,
+  squareNum,
+  isOnMouseDown,
+  setIsOnMouseDown,
+}: any) => {
   return (
     <div className="flex flex-row" style={{}}>
       {[...Array(squareNum).keys()].map((_, index) => (
@@ -10,6 +18,8 @@ const Line = ({ vertical, colors, handleColorChange, squareNum }: any) => {
           horizontal={index}
           colors={colors}
           handleColorChange={handleColorChange(vertical)}
+          isOnMouseDown={isOnMouseDown}
+          setIsOnMouseDown={setIsOnMouseDown}
         />
       ))}
     </div>

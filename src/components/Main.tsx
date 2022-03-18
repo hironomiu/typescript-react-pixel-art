@@ -10,6 +10,7 @@ const Main = () => {
   const [color, setColor] = useState<string>('#81599b')
   const [colors, setColors] = useState<string[][]>(defaultColors)
   const [squareNum, setSquareNum] = useState(8)
+  const [isOnMouseDown, setIsOnMouseDown] = useState<boolean>(false)
 
   const handleColorChange = (vertical: number) => (horizontal: number) => {
     const colors2 = [...colors]
@@ -34,6 +35,8 @@ const Main = () => {
           colors={colors}
           handleColorChange={handleColorChange}
           squareNum={squareNum}
+          isOnMouseDown={isOnMouseDown}
+          setIsOnMouseDown={setIsOnMouseDown}
         />
       </div>
       <Form
