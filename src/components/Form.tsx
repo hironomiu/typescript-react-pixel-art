@@ -1,5 +1,13 @@
-// TODO 型
-const Form = ({ color, setColor, handleRadioChange, squareNum }: any) => {
+import React, { FC } from 'react'
+
+type Props = {
+  color: string
+  setColor: React.Dispatch<React.SetStateAction<string>>
+  handleRadioChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  squareNum: number
+}
+
+const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
   return (
     <div>
       {' '}

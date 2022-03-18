@@ -1,14 +1,22 @@
+import { FC } from 'react'
 import Square from './Square'
 
-// TODO 型
-const Line = ({
+type Props = {
+  vertical: number
+  colors: string[][]
+  handleColorChange: (vertical: number) => (horizontal: number) => void
+  squareNum: number
+  isOnMouseDown: boolean
+  setIsOnMouseDown: React.Dispatch<React.SetStateAction<boolean>>
+}
+const Line: FC<Props> = ({
   vertical,
   colors,
   handleColorChange,
   squareNum,
   isOnMouseDown,
   setIsOnMouseDown,
-}: any) => {
+}) => {
   return (
     <div className="flex flex-row" style={{}}>
       {[...Array(squareNum).keys()].map((_, index) => (

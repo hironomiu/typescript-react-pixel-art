@@ -1,13 +1,21 @@
+import { FC } from 'react'
 import Line from './Line'
 
-// TODO 型
-const Board = ({
+type Props = {
+  colors: string[][]
+  handleColorChange: (vertical: number) => (horizontal: number) => void
+  squareNum: number
+  isOnMouseDown: boolean
+  setIsOnMouseDown: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Board: FC<Props> = ({
   colors,
   handleColorChange,
   squareNum,
   isOnMouseDown,
   setIsOnMouseDown,
-}: any) => {
+}) => {
   return (
     <div className="flex flex-col border-t-[1px] border-l-[1px] border-solid border-black">
       {[...Array(squareNum).keys()].map((_, index) => {
