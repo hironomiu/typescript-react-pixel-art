@@ -1,6 +1,13 @@
 import Line from './Line'
 
-const Board = ({ colors, handleColorChange, squareNum }: any) => {
+// TODO 型
+const Board = ({
+  colors,
+  handleColorChange,
+  squareNum,
+  isOnMouseDown,
+  setIsOnMouseDown,
+}: any) => {
   return (
     <div
       className="flex flex-col border-t-[1px] border-l-[1px] border-solid border-black"
@@ -15,6 +22,8 @@ const Board = ({ colors, handleColorChange, squareNum }: any) => {
             colors={colors}
             handleColorChange={handleColorChange}
             squareNum={squareNum}
+            isOnMouseDown={isOnMouseDown}
+            setIsOnMouseDown={setIsOnMouseDown}
           />
         )
       })}
