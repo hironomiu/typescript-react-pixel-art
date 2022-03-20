@@ -12,7 +12,7 @@ describe('Form', () => {
         squareNum={8}
       />
     )
-    expect(screen.getByText('選択')).toBeInTheDocument()
+    // expect(screen.getByText('選択')).toBeInTheDocument()
     expect(screen.getByText('8 x 8')).toBeInTheDocument()
     expect(screen.getByText('16 x 16')).toBeInTheDocument()
   })
