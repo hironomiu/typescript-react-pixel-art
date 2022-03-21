@@ -14,9 +14,8 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
   const [colorB, setColorB] = useState('9b')
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center">
       <div className="flex flex-row items-center">
-        {/* <label className="text-lg mx-2">選択</label> */}
         <input
           className="w-96 h-14"
           type="color"

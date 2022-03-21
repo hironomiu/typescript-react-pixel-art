@@ -1,17 +1,24 @@
-import React from 'react'
-
-const InputRange = ({
+import { FC } from 'react'
+type Props = {
+  color: string
+  colorR: string
+  colorG: string
+  colorB: string
+  setColorRGB: React.Dispatch<React.SetStateAction<string>>
+  setColor: React.Dispatch<React.SetStateAction<string>>
+}
+const InputRange: FC<Props> = ({
   color,
   colorR,
   colorG,
   colorB,
   setColorRGB,
   setColor,
-}: any) => {
+}) => {
   return (
     <>
       <input
-        className="cursor-pointer outline-none"
+        className="appearance-none cursor-pointer outline-none bg-blue-300 rounded h-2 mx-2"
         type="range"
         min="0"
         max="255"
