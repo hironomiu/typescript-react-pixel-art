@@ -64,7 +64,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
           />
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center my-4">
         <label className="text-xl">
           <input
             type="radio"

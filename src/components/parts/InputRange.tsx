@@ -18,7 +18,7 @@ const InputRange: FC<Props> = ({
   return (
     <>
       <input
-        className="appearance-none cursor-pointer outline-none bg-blue-300 rounded h-2 mx-2"
+        className="appearance-none cursor-pointer outline-none bg-blue-300 rounded h-2 mx-2 w-28"
         type="range"
         min="0"
         max="255"
