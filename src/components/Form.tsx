@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react'
+import InputRange from './parts/InputRange'
 
 type Props = {
   color: string
@@ -8,9 +9,9 @@ type Props = {
 }
 
 const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
-  const [color1, setColor1] = useState('81')
-  const [color2, setColor2] = useState('59')
-  const [color3, setColor3] = useState('9b')
+  const [colorR, setColorR] = useState('81')
+  const [colorG, setColorG] = useState('59')
+  const [colorB, setColorB] = useState('9b')
 
   return (
     <div>
@@ -21,9 +22,9 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
           type="color"
           onChange={(e) => {
             setColor(e.target.value)
-            setColor1(e.target.value.slice(1, 3))
-            setColor2(e.target.value.slice(3, 5))
-            setColor3(e.target.value.slice(5, 7))
+            setColorR(e.target.value.slice(1, 3))
+            setColorG(e.target.value.slice(3, 5))
+            setColorB(e.target.value.slice(5, 7))
           }}
           value={color}
         />
@@ -32,47 +33,35 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
       <div className="flex">
         <div className="flex flex-col items-center">
           <label>R</label>
-          <input
-            className="cursor-pointer outline-none"
-            type="range"
-            min="0"
-            max="255"
-            value={parseInt(color1, 16)}
-            onChange={(e) => {
-              console.log('color1 10 :', parseInt(color1, 16))
-              setColor1(('00' + Number(e.target.value).toString(16)).slice(-2))
-              setColor(`#${color1}${color2}${color3}`)
-            }}
+          <InputRange
+            color={colorR}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorR}
+            setColor={setColor}
           />
         </div>
         <div className="flex flex-col items-center">
           <label>G</label>
-          <input
-            className="cursor-pointer"
-            type="range"
-            min="0"
-            max="255"
-            value={parseInt(color2, 16)}
-            onChange={(e) => {
-              console.log('color2 10 :', parseInt(color2, 16))
-              setColor2(('00' + Number(e.target.value).toString(16)).slice(-2))
-              setColor(`#${color1}${color2}${color3}`)
-            }}
+          <InputRange
+            color={colorG}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorG}
+            setColor={setColor}
           />
         </div>
         <div className="flex flex-col items-center">
           <label>B</label>
-          <input
-            className="cursor-pointer"
-            type="range"
-            min="0"
-            max="255"
-            value={parseInt(color3, 16)}
-            onChange={(e) => {
-              console.log('color3 10 :', parseInt(color3, 16))
-              setColor3(('00' + Number(e.target.value).toString(16)).slice(-2))
-              setColor(`#${color1}${color2}${color3}`)
-            }}
+          <InputRange
+            color={colorB}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorB}
+            setColor={setColor}
           />
         </div>
       </div>
