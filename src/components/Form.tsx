@@ -29,69 +29,54 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
         />
       </div>
 
-      <div>
-        {/* <div
-          style={{ backgroundColor: `${color}` }}
-          className="h-10 w-96"
-        ></div> */}
-        <input
-          className=""
-          type="range"
-          min="0"
-          max="255"
-          // max="16777215"
-          value={parseInt(color1, 16)}
-          onChange={(e) => {
-            console.log('hex:', Number(e.target.value).toString(16))
-            console.log(('00' + Number(e.target.value).toString(16)).slice(-2))
-            console.log('color1 10 :', parseInt(color1, 16))
-            setColor1(
-              ('00' + Number(e.target.value).toString(16)).slice(-2)
-              // +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2) +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2)
-            )
-            setColor(`#${color1}${color2}${color3}`)
-          }}
-        />
-        <input
-          className=""
-          type="range"
-          min="0"
-          max="255"
-          // max="16777215"
-          value={parseInt(color2, 16)}
-          onChange={(e) => {
-            console.log('color2 10 :', parseInt(color2, 16))
-            setColor2(
-              ('00' + Number(e.target.value).toString(16)).slice(-2)
-              // +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2) +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2)
-            )
-            setColor(`#${color1}${color2}${color3}`)
-          }}
-        />
-        <input
-          className=""
-          type="range"
-          min="0"
-          max="255"
-          // max="16777215"
-          value={parseInt(color3, 16)}
-          onChange={(e) => {
-            console.log('color3 10 :', parseInt(color3, 16))
-            setColor3(
-              ('00' + Number(e.target.value).toString(16)).slice(-2)
-              // +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2) +
-              // ('00' + Number(e.target.value).toString(16)).slice(-2)
-            )
-            setColor(`#${color1}${color2}${color3}`)
-          }}
-        />
+      <div className="flex">
+        <div className="flex flex-col items-center">
+          <label>R</label>
+          <input
+            className="cursor-pointer outline-none"
+            type="range"
+            min="0"
+            max="255"
+            value={parseInt(color1, 16)}
+            onChange={(e) => {
+              console.log('color1 10 :', parseInt(color1, 16))
+              setColor1(('00' + Number(e.target.value).toString(16)).slice(-2))
+              setColor(`#${color1}${color2}${color3}`)
+            }}
+          />
+        </div>
+        <div className="flex flex-col items-center">
+          <label>G</label>
+          <input
+            className="cursor-pointer"
+            type="range"
+            min="0"
+            max="255"
+            value={parseInt(color2, 16)}
+            onChange={(e) => {
+              console.log('color2 10 :', parseInt(color2, 16))
+              setColor2(('00' + Number(e.target.value).toString(16)).slice(-2))
+              setColor(`#${color1}${color2}${color3}`)
+            }}
+          />
+        </div>
+        <div className="flex flex-col items-center">
+          <label>B</label>
+          <input
+            className="cursor-pointer"
+            type="range"
+            min="0"
+            max="255"
+            value={parseInt(color3, 16)}
+            onChange={(e) => {
+              console.log('color3 10 :', parseInt(color3, 16))
+              setColor3(('00' + Number(e.target.value).toString(16)).slice(-2))
+              setColor(`#${color1}${color2}${color3}`)
+            }}
+          />
+        </div>
       </div>
-      <div>
+      <div className="flex justify-center">
         <label className="text-xl">
           <input
             type="radio"
