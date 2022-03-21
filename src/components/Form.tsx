@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
+import InputRange from './parts/InputRange'
 
 type Props = {
   color: string
@@ -8,16 +9,62 @@ type Props = {
 }
 
 const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
+  const [colorR, setColorR] = useState('81')
+  const [colorG, setColorG] = useState('59')
+  const [colorB, setColorB] = useState('9b')
+
   return (
-    <div>
-      {' '}
-      <label className="text-xl my-4">選択</label>
-      <input
-        type="color"
-        onChange={(e) => setColor(e.target.value)}
-        value={color}
-      />
-      <div>
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-row items-center">
+        <input
+          className="w-96 h-14"
+          type="color"
+          onChange={(e) => {
+            setColor(e.target.value)
+            setColorR(e.target.value.slice(1, 3))
+            setColorG(e.target.value.slice(3, 5))
+            setColorB(e.target.value.slice(5, 7))
+          }}
+          value={color}
+        />
+      </div>
+
+      <div className="flex">
+        <div className="flex flex-col items-center">
+          <label>R</label>
+          <InputRange
+            color={colorR}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorR}
+            setColor={setColor}
+          />
+        </div>
+        <div className="flex flex-col items-center">
+          <label>G</label>
+          <InputRange
+            color={colorG}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorG}
+            setColor={setColor}
+          />
+        </div>
+        <div className="flex flex-col items-center">
+          <label>B</label>
+          <InputRange
+            color={colorB}
+            colorR={colorR}
+            colorG={colorG}
+            colorB={colorB}
+            setColorRGB={setColorB}
+            setColor={setColor}
+          />
+        </div>
+      </div>
+      <div className="flex justify-center my-4">
         <label className="text-xl">
           <input
             type="radio"
