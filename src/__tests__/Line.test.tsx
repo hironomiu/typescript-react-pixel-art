@@ -10,9 +10,9 @@ describe('Line', () => {
         colors={[...Array(8).keys()].map((num) =>
           [...Array(8).keys()].map(() => '#ffffff')
         )}
-        handleColorChange={() => null}
+        handleColorChange={() => () => null}
         squareNum={8}
-        isOnMouseDown={() => null}
+        isOnMouseDown={false}
         setIsOnMouseDown={() => null}
       />
     )
