@@ -16,7 +16,9 @@ const Main = () => {
 
   return (
     <div className="text-2xl flex flex-col justify-center items-center ">
-      <h1 className="my-4">Pixel Art App</h1>
+      <h1 className="my-4" data-testid="main-h1">
+        Pixel Art App
+      </h1>
 
       <div className="h-80">
         <Board
