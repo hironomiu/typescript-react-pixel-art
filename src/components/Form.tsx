@@ -72,6 +72,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
             value={8}
             onChange={handleRadioChange}
             checked={squareNum === 8}
+            data-testid="input-square-8"
           />
           8 x 8
         </label>
@@ -82,6 +83,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
             value={16}
             onChange={handleRadioChange}
             checked={squareNum === 16}
+            data-testid="input-square-16"
           />
           16 x 16
         </label>
