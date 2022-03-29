@@ -31,7 +31,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
 
       <div className="flex">
         <div className="flex flex-col items-center">
-          <label>R</label>
+          <label data-testid="label-r">R</label>
           <InputRange
             color={colorR}
             colorR={colorR}
@@ -42,7 +42,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
           />
         </div>
         <div className="flex flex-col items-center">
-          <label>G</label>
+          <label data-testid="label-g">G</label>
           <InputRange
             color={colorG}
             colorR={colorR}
@@ -53,7 +53,7 @@ const Form: FC<Props> = ({ color, setColor, handleRadioChange, squareNum }) => {
           />
         </div>
         <div className="flex flex-col items-center">
-          <label>B</label>
+          <label data-testid="label-b">B</label>
           <InputRange
             color={colorB}
             colorR={colorR}
